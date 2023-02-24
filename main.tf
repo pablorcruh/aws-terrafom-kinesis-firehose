@@ -12,7 +12,7 @@ resource "aws_kinesis_firehose_delivery_stream" "extended_s3_stream" {
     }
 
     # Example prefix using partitionKeyFromQuery, applicable to JQ processor
-    prefix              = "data/enterprise_id=!{partitionKeyFromQuery:customer_id}/year=!{timestamp:yyyy}/month=!{timestamp:MM}/day=!{timestamp:dd}/hour=!{timestamp:HH}/"
+    prefix              = "data/enterprise_id=!{partitionKeyFromQuery:enterprise_id}/year=!{timestamp:yyyy}/month=!{timestamp:MM}/day=!{timestamp:dd}/hour=!{timestamp:HH}/"
     error_output_prefix = "errors/year=!{timestamp:yyyy}/month=!{timestamp:MM}/day=!{timestamp:dd}/hour=!{timestamp:HH}/!{firehose:error-output-type}/"
 
 
