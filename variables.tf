@@ -18,6 +18,16 @@ variable "glue_catalog_table_name" {
   type        = string
 }
 
+variable "kinesis_firehose_stream_name" {
+  description = "Stream name Firehose"
+  type        = string
+}
+
+variable "glue_crawler" {
+  description = "Crawler name"
+  type        = string
+}
+
 variable "glue_catalog_table_columns" {
   description = "A list of table columns"
   type = map(object({
